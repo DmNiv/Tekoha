@@ -6,6 +6,7 @@ class_name StateAttack01 extends State
 
 func Enter():
 	if player:
+		player.velocity = Vector2.ZERO
 		# Atualiza a direção do mouse
 		player.set_mouse_position()
 		# Direção do ataque é a do mouse
@@ -22,5 +23,11 @@ func Update(_delta: float):
 func Physics_Update(_delta: float):
 	pass
 
-func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+func attack():
+	player.velocity = (player.attack_direction) * player.ATTACK_VELOCITY
+	
+func stop_attack():
+	player.velocity = Vector2.ZERO
+
+func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	Transitioned.emit(self, "Idle")
