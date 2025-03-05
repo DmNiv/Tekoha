@@ -10,7 +10,6 @@ var idle
 # Variáveis de ataque
 var attack_direction : Vector2 = Vector2.ZERO
 var can_attack : bool = true
-const ATTACK_VELOCITY: int = 30
 
 # Variáveis de Dash
 var can_dash: bool = true
