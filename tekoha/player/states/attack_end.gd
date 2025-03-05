@@ -5,7 +5,6 @@ class_name StateAttackEnd extends State
 @onready var player: Player = $"../.."
 
 func Enter():
-	print("enter end")
 	if player:
 		#player.can_attack = false
 		animation_root_node.travel("AttackEnd")

@@ -35,4 +35,5 @@ func stop_attack():
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["attack01_down", "attack01_up", "attack01_left", "attack01_right"]:
+		stop_attack()
 		Transitioned.emit(self, "AttackEnd")
