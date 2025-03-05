@@ -14,6 +14,11 @@ var can_attack : bool = true
 # Variáveis de Dash
 var can_dash: bool = true
 
+@onready var animation_tree: AnimationTree = $AnimationTree
+
+func _ready() -> void:
+	animation_tree.active = true
+
 func _physics_process(_delta: float) -> void:
 	idle = !velocity
 	if !idle:
