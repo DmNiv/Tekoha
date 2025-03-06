@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://catpwvep7ok5b"]
+[gd_scene load_steps=3 format=3 uid="uid://catpwvep7ok5b"]
 
 [ext_resource type="PackedScene" uid="uid://cyo4xeitxgp01" path="res://player/player.tscn" id="1_c0kp1"]
+[ext_resource type="PackedScene" uid="uid://ddq6wns861ehm" path="res://enemies/enemy_ranged/enemy_ranged.tscn" id="2_f0ocu"]
 
 [node name="Teste" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_c0kp1")]
-position = Vector2(246, 139)
+position = Vector2(190, 112)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="EnemyRanged" parent="." instance=ExtResource("2_f0ocu")]
+position = Vector2(227, 127)
