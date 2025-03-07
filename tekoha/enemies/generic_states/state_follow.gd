@@ -8,7 +8,6 @@ class_name StateFollowEnemy extends State
 var direction_to_player: Vector2
 
 func Enter():
-	print("follow")
 	pass
 
 func Exit():

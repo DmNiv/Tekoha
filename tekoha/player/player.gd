@@ -23,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 	idle = !velocity
 	if !idle:
 		last_facing_direction = move_direction
-	
+	print(last_facing_direction)
 	move_and_slide()
 
 func set_direction():
