@@ -14,7 +14,6 @@ func randomize_wander():
 func Enter():
 	if enemy:
 		randomize_wander()
-		print("wander")
 
 func Exit():
 	pass

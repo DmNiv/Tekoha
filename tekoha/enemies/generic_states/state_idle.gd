@@ -14,7 +14,6 @@ func Enter():
 	if enemy:
 		enemy.velocity = Vector2.ZERO
 		randomize_time()
-		print("idle")
 
 func Exit():
 	pass

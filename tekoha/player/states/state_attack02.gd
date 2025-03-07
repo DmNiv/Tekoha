@@ -32,6 +32,7 @@ func attack():
 func stop_attack():
 	if player:
 		player.velocity = Vector2.ZERO
+		player.last_facing_direction = player.mouse_position
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["attack02_down", "attack02_up", "attack02_left", "attack02_right"]:
