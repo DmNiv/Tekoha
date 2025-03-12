@@ -2035,18 +2035,16 @@ script = ExtResource("15_hqlns")
 health_component = NodePath("../HealthComponent")
 
 [node name="Hitbox" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_sw8gl")
 debug_color = Color(1, 0.449014, 0.411531, 0.42)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_ms7xr")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2ymfm")
 animation = &"idle_down"
-offset = Vector2(0, -11)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
