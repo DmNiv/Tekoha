@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://ddq6wns861ehm"]
+[gd_scene load_steps=157 format=3 uid="uid://ddq6wns861ehm"]
 
 [ext_resource type="Texture2D" uid="uid://cplr6jvoxf7uq" path="res://enemies/enemy_ranged/assets/Bow_6_Template_Attack_1_Down-Sheet.png" id="1_8pjee"]
 [ext_resource type="Script" uid="uid://b4eu17inv47gl" path="res://enemies/enemy_ranged/enemy_ranged.gd" id="1_e8yjm"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://cfubexlbd4n5m" path="res://enemies/generic_states/state_wander.gd" id="23_w125s"]
 [ext_resource type="Script" uid="uid://b7espd32b6hea" path="res://enemies/generic_states/state_follow.gd" id="24_s6lfo"]
 [ext_resource type="Script" uid="uid://b7d7vvi5jepmg" path="res://enemies/enemy_ranged/state_range_attack01.gd" id="25_tm8bu"]
+[ext_resource type="Script" uid="uid://dj1dmecdpxa1m" path="res://enemies/enemy_ranged/state_aim.gd" id="25_unkp8"]
 [ext_resource type="PackedScene" uid="uid://bf5wdv2nlkiof" path="res://enemies/arrow.tscn" id="26_4833x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u3p5n"]
@@ -708,7 +709,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_ylh84"]
 resource_name = "attack_end_down"
 length = 0.333338
-loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -738,7 +738,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_b26mc"]
 resource_name = "attack_end_left"
 length = 0.333338
-loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -768,7 +767,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_jvg8h"]
 resource_name = "attack_end_right"
 length = 0.333338
-loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -798,7 +796,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_exuoc"]
 resource_name = "attack_end_up"
 length = 0.333338
-loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -945,6 +942,178 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_tm8bu"]
+resource_name = "attack01_down"
+length = 0.500004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack01_down"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/RangeAttack01")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.291667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4833x"]
+resource_name = "attack01_left"
+length = 0.500004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack01_left"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/RangeAttack01")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.291667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_unkp8"]
+resource_name = "attack01_right"
+length = 0.500004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack01_right"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/RangeAttack01")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.291667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1ijdr"]
+resource_name = "attack01_up"
+length = 0.500004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack01_up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/RangeAttack01")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.291667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_e8yjm"]
 resource_name = "walk_down"
 length = 0.500004
@@ -1051,126 +1220,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"walk_up"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_tm8bu"]
-resource_name = "attack01_down"
-length = 0.500004
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack01_down"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_4833x"]
-resource_name = "attack01_left"
-length = 0.500004
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack01_left"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_unkp8"]
-resource_name = "attack01_right"
-length = 0.500004
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack01_right"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_1ijdr"]
-resource_name = "attack01_up"
-length = 0.500004
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack01_up"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1333,7 +1382,7 @@ states/RangeAttack01/position = Vector2(530, 155)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_mxmuc")
 states/Walk/position = Vector2(358, 217)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_u3p5n"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_e8yjm"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_mapt7"), "AttackEnd", "Idle", SubResource("AnimationNodeStateMachineTransition_w125s"), "RangeAttack01", "AttackEnd", SubResource("AnimationNodeStateMachineTransition_s6lfo"), "Idle", "RangeAttack01", SubResource("AnimationNodeStateMachineTransition_tm8bu"), "Walk", "RangeAttack01", SubResource("AnimationNodeStateMachineTransition_4833x")]
-graph_offset = Vector2(31, -3)
+graph_offset = Vector2(0, 13)
 
 [node name="EnemyRanged" type="CharacterBody2D"]
 collision_layer = 4
@@ -1375,7 +1424,7 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/AttackEnd/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(-0.000813663, 0.00432897)
-parameters/RangeAttack01/blend_position = Vector2(-0.000812352, 0)
+parameters/RangeAttack01/blend_position = Vector2(-0.99681, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("20_mapt7")
 
@@ -1387,19 +1436,25 @@ metadata/_custom_type_script = "uid://knlg3c1rm1tb"
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("20_u3p5n")
 enemy = NodePath("../..")
-range = 300
+range_to_follow = 250
 
 [node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("23_w125s")
 enemy = NodePath("../..")
-range = 300
+range_to_follow = 250
 
 [node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("24_s6lfo")
 enemy = NodePath("../..")
-range = 500
-range_to_attack = 100
+range_to_aim = 100
+
+[node name="Aim" type="Node" parent="StateMachine"]
+script = ExtResource("25_unkp8")
+range_to_attack = 50
+range_to_exit = 125
 
 [node name="RangeAttack01" type="Node" parent="StateMachine"]
 script = ExtResource("25_tm8bu")
 projectile = ExtResource("26_4833x")
+
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/RangeAttack01" method="_on_animation_tree_animation_finished"]

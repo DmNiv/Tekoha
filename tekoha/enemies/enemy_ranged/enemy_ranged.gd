@@ -11,8 +11,5 @@ func _ready() -> void:
 	animation_tree.active = true
 
 func _physics_process(_delta: float) -> void:
-	idle = !velocity
-	if !idle:
-		last_facing_direction = move_direction
-	
+	last_facing_direction = move_direction
 	move_and_slide()
