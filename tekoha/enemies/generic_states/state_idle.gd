@@ -1,11 +1,11 @@
 class_name StateIdleEnemy extends State
 
 @export var enemy: Enemy
-@export var range: int
+@export var range_to_follow: int
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
 
 var idle_time: float
-var direction_to_player: Vector2
+var distance_to_player: Vector2
 
 func randomize_time():
 	idle_time = randf_range(1, 2)
@@ -25,7 +25,7 @@ func Update(delta: float):
 		Transitioned.emit(self, "Wander")
 
 func Physics_Update(_delta: float):
-	if player:
-		direction_to_player = player.global_position - enemy.global_position
-		if direction_to_player.length() < range:
+	if player and enemy:
+		distance_to_player = player.global_position - enemy.global_position
+		if distance_to_player.length() < range_to_follow:
 			Transitioned.emit(self, "Follow")

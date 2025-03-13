@@ -1,11 +1,11 @@
 class_name StateWanderEnemy extends State
 
 @export var enemy: Enemy
-@export var range: int
+@export var range_to_follow: int
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
 
 var wander_time: float
-var direction_to_player: Vector2
+var distance_to_player: Vector2
 
 func randomize_wander():
 	enemy.move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
@@ -27,7 +27,7 @@ func Update(delta: float):
 func Physics_Update(_delta: float):
 	if enemy:
 		enemy.velocity = enemy.move_direction * enemy.SPEED
-	if player:
-		direction_to_player = player.global_position - enemy.global_position
-		if direction_to_player.length() < range:
+	if player and enemy:
+		distance_to_player = player.global_position - enemy.global_position
+		if distance_to_player.length() < range_to_follow:
 			Transitioned.emit(self, "Follow")
