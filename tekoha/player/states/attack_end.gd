@@ -1,4 +1,4 @@
-class_name StateAttackEnd extends State
+class_name PlayerStateAttackEnd extends State
 
 @onready var animation_tree: AnimationTree = $"../../AnimationTree"
 @onready var animation_root_node = animation_tree["parameters/playback"]

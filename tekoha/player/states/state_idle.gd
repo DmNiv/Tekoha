@@ -1,4 +1,4 @@
-class_name StateIdle extends State
+class_name PlayerStateIdle extends State
 
 @onready var player: Player = $"../.."
 
