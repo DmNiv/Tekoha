@@ -26,9 +26,10 @@ func Physics_Update(delta: float):
 	
 
 func shoot():
-	var projectile_instance: Area2D = projectile.instantiate()
+	var projectile_instance: Projectile = projectile.instantiate()
 	get_tree().current_scene.add_child(projectile_instance)
 	projectile_instance.global_position = enemy.global_position
+	projectile_instance.attack = enemy.attack
 	projectile_instance.direction = (player.global_position - enemy.global_position).normalized()
 	
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
