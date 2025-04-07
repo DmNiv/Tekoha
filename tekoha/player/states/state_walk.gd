@@ -1,4 +1,4 @@
-class_name StateWalk extends State
+class_name PlayerStateWalk extends State
 
 @onready var player: Player = $"../.."
 
