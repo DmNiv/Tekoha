@@ -9,7 +9,7 @@ var idle
 
 var attack: Attack
 var projectile_damage: int = 10
-var projectile_knockback: int
+var projectile_knockback: int = 50
 const PROJECTILE_STUN_TIME: float = 1.5
 
 func _ready() -> void:
