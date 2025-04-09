@@ -17,5 +17,6 @@ func damage(attack: Attack) -> void:
 			parent.velocity = (parent.global_position - attack.attack_position).normalized()*attack.knockback_force
 	
 	health -= attack.attack_damage
+
 	if health <= 0:
 		get_parent().queue_free()

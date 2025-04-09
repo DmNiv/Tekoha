@@ -2496,7 +2496,7 @@ states/Stun/position = Vector2(216, -35)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_3wm6c")
 states/Walk/position = Vector2(237, 219)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_y12lg"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_q8swa"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_s6idu"), "Idle", "Attack01", SubResource("AnimationNodeStateMachineTransition_rptt4"), "Walk", "Attack01", SubResource("AnimationNodeStateMachineTransition_r7pn3"), "Attack01", "AttackEnd", SubResource("AnimationNodeStateMachineTransition_g4c7l"), "AttackEnd", "Idle", SubResource("AnimationNodeStateMachineTransition_knn7v"), "AttackEnd", "Attack02", SubResource("AnimationNodeStateMachineTransition_pnw6m"), "Attack02", "Idle", SubResource("AnimationNodeStateMachineTransition_1so5t"), "Idle", "Stun", SubResource("AnimationNodeStateMachineTransition_6ws1b"), "AttackEnd", "Stun", SubResource("AnimationNodeStateMachineTransition_mikk3"), "Walk", "Stun", SubResource("AnimationNodeStateMachineTransition_pgwk2"), "Stun", "Idle", SubResource("AnimationNodeStateMachineTransition_k8h4n")]
-graph_offset = Vector2(-238, -60)
+graph_offset = Vector2(-288, 3)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 32

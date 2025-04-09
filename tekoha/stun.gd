@@ -5,7 +5,6 @@ class_name StateStun extends State
 @onready var animation_root_node = animation_tree["parameters/playback"]
 
 func Enter():
-	print("alo")
 	if parent:
 		animation_root_node.travel("Stun")
 
