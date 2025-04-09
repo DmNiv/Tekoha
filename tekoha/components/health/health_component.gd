@@ -9,6 +9,6 @@ func _ready() -> void:
 
 func damage(attack: Attack) -> void:
 	health -= attack.attack_damage
-	
+
 	if health <= 0:
 		get_parent().queue_free()
