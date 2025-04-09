@@ -9,10 +9,9 @@ var idle
 
 # Variáveis de ataque
 var attack_direction : Vector2 = Vector2.ZERO
-var can_attack : bool = true
 
-# Variáveis de Dash
-var can_dash: bool = true
+var roll_direction : Vector2 = Vector2.ZERO
+var can_roll: bool = true
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 
@@ -30,3 +29,6 @@ func set_direction():
 	
 func set_mouse_direction():
 	mouse_direction = (get_global_mouse_position() - global_position).normalized()
+
+func _on_roll_timer_timeout() -> void:
+	can_roll = true

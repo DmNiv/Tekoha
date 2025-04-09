@@ -15,6 +15,8 @@ func Exit():
 func Update(_delta: float):
 	if Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "Attack02")
+	elif Input.is_action_just_pressed("roll") and player.can_roll:
+		Transitioned.emit(self, "Roll")
 
 func Physics_Update(_delta: float):
 	pass
