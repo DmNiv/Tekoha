@@ -1,4 +1,4 @@
-[gd_scene load_steps=280 format=3 uid="uid://cyo4xeitxgp01"]
+[gd_scene load_steps=279 format=3 uid="uid://cyo4xeitxgp01"]
 
 [ext_resource type="Script" uid="uid://dcux51y0uwrim" path="res://player/player.gd" id="1_roqei"]
 [ext_resource type="Script" uid="uid://bdxhos810vmao" path="res://player/weapon.gd" id="2_2uvqg"]
@@ -36,7 +36,6 @@
 [ext_resource type="Script" uid="uid://bams61k3mbgxn" path="res://player/states/attack_end.gd" id="25_knn7v"]
 [ext_resource type="Script" uid="uid://tc6n5rypn0ql" path="res://player/states/state_attack02.gd" id="30_jd2rm"]
 [ext_resource type="Script" uid="uid://dksw0a2dtuj7o" path="res://player/states/state_dash.gd" id="32_1s1yo"]
-[ext_resource type="PackedScene" uid="uid://noexr0eshm8s" path="res://amulets/vitoria_regia/vitoria_regia.tscn" id="37_pnw6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s1yo"]
 size = Vector2(68, 39)
@@ -2693,8 +2692,6 @@ script = ExtResource("32_1s1yo")
 
 [node name="RollTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="VitoriaRegia" parent="." instance=ExtResource("37_pnw6m")]
 
 [connection signal="area_entered" from="Weapon/WeaponHitbox" to="Weapon" method="_on_weapon_hitbox_area_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Attack01" method="_on_animation_tree_animation_finished"]

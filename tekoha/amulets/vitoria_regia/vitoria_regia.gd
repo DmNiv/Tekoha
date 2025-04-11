@@ -4,13 +4,16 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var water_collision: CollisionShape2D = $WaterArea/WaterCollision
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
+@onready var attack : Attack = Attack.new()
 
 func _ready() -> void:
 	animated_sprite_2d.animation = "start"
+	attack.knockback_force = 400
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("use_ability"):
+		attack.attack_position = global_position
 		animated_sprite_2d.visible = true
 		water_collision.disabled = false
 		animation_player.play("start")
@@ -27,4 +30,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 
 func _on_water_area_area_entered(area: Area2D) -> void:
-	area.get_parent().velocity -= 200
+	area.get_parent().velocity += (area.get_parent().global_position - attack.attack_position).normalized() * attack.knockback_force

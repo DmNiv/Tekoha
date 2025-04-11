@@ -26,6 +26,7 @@ func Physics_Update(delta: float):
 	
 
 func shoot():
+	
 	var projectile_instance: Projectile = projectile.instantiate()
 	get_tree().current_scene.add_child(projectile_instance)
 	projectile_instance.global_position = enemy.global_position
