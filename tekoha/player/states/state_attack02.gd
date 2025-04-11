@@ -24,7 +24,7 @@ func Enter():
 		animation_root_node.travel("Attack02")
 
 func Exit():
-	pass
+	stop_attack()
 
 func Update(_delta: float):
 	pass
