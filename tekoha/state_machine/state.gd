@@ -1,8 +1,8 @@
 class_name State extends Node
 
-var owner_node: Node2D
-var animation_tree: AnimationTree
-var animation_root_node = animation_tree["parameters/playback"]
+@onready var owner_node: Node2D
+@onready var animation_tree: AnimationTree
+@onready var animation_root_node: AnimationNodeStateMachinePlayback
 signal Transitioned(state_name: String)
 
 func enter():

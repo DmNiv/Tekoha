@@ -10,13 +10,23 @@ var idle
 # Variáveis de ataque
 var attack_direction : Vector2 = Vector2.ZERO
 
+# Variáveis de cambalhota
 var roll_direction : Vector2 = Vector2.ZERO
 var can_roll: bool = true
 
+# Variáveis de controle
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var state_machine: StateMachine = $StateMachine
+@onready var owner_info : OwnerInfo
+@onready var weapon: PlayerWeapon = $Weapon
 
 func _ready() -> void:
-	animation_tree.active = true
+	owner_info = OwnerInfo.new()
+	owner_info.owner_node = self
+	owner_info.animation_tree = animation_tree
+	owner_info.animation_root_node = animation_tree["parameters/playback"]
+	state_machine.init(owner_info)
+	
 
 func _physics_process(_delta: float) -> void:
 	idle = !velocity

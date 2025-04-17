@@ -7,11 +7,13 @@ var current_state: State
 var previous_state: State
 
 # Preencher o dicionário com todos os estados
-func init(owner: Node2D) -> void:
+func init(owner_info: OwnerInfo) -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
-			child.owner_node = owner
+			child.owner_node = owner_info.owner_node
+			child.animation_tree = owner_info.animation_tree
+			child.animation_root_node = owner_info.animation_root_node
 			child.Transitioned.connect(change_state)
 		
 		# Se existir um estado inicial, entrar e assumir como estado atual
