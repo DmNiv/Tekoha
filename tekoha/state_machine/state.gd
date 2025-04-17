@@ -1,15 +1,21 @@
 class_name State extends Node
 
-signal Transitioned
+var owner_node: Node2D
+var animation_tree: AnimationTree
+var animation_root_node = animation_tree["parameters/playback"]
+signal Transitioned(state_name: String)
 
-func Enter():
+func enter():
 	pass
 
-func Exit():
+func exit():
 	pass
 
-func Update(_delta: float):
+func update(_delta: float):
 	pass
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	pass
+
+func transition_to(state_name: String):
+	Transitioned.emit(state_name)
