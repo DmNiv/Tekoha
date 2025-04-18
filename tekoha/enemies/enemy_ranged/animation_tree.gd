@@ -2,6 +2,9 @@ extends AnimationTree
 
 @onready var enemy_ranged: Enemy = $".."
 
+func _ready() -> void:
+	active = true
+
 func _process(delta: float) -> void:
 	set("parameters/Idle/blend_position", enemy_ranged.last_facing_direction)
 	set("parameters/Walk/blend_position", enemy_ranged.move_direction)

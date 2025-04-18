@@ -11,23 +11,23 @@ func randomize_wander():
 	enemy.move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	wander_time = randf_range(1, 2)
 
-func Enter():
+func enter():
 	if enemy:
 		randomize_wander()
 
-func Exit():
+func exit():
 	pass
 
-func Update(delta: float):		
+func update(delta: float):
 	if wander_time > 0:
 		wander_time -= delta
 	else:
-		Transitioned.emit(self, "Idle")
+		transition_to("Idle")
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	if enemy:
 		enemy.velocity = enemy.move_direction * enemy.SPEED
 	if player and enemy:
 		distance_to_player = player.global_position - enemy.global_position
 		if distance_to_player.length() < range_to_follow:
-			Transitioned.emit(self, "Follow")
+			transition_to("Follow")
