@@ -1,23 +1,16 @@
-class_name PlayerStateIdle extends State
+extends State
 
-@onready var player: Player = $"../.."
+func enter():
+	owner_node.velocity = Vector2.ZERO
 
-func Enter():
-	if player:
-		player.velocity = Vector2.ZERO
-
-func Exit():
+func exit():
 	pass
 
-func Update(_delta: float):
-	if player:
-		if player.move_direction:
-			Transitioned.emit(self, "Walk")
-		elif Input.is_action_just_pressed("roll") and player.can_roll:
-			Transitioned.emit(self, "Roll")
-		elif Input.is_action_just_pressed("attack"):
-			Transitioned.emit(self, "Attack01")
+func update(_delta: float):
+	if owner_node.move_direction:
+		transition_to("Walk")
+	owner_node.check_roll_input()
+	owner_node.check_attack_input()
 
-func Physics_Update(_delta: float):
-	if player:
-		player.set_direction()
+func physics_update(_delta: float):
+	owner_node.set_direction()

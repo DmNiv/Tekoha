@@ -6,19 +6,19 @@ class_name StateFollowEnemy extends State
 
 var distance_to_player: Vector2
 
-func Enter():
+func enter():
 	pass
 
-func Exit():
+func exit():
 	pass
 
-func Update(delta: float):
+func update(delta: float):
 	pass
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	if player and enemy:
 		distance_to_player = player.global_position - enemy.global_position
 		enemy.move_direction = distance_to_player
 		enemy.velocity = enemy.move_direction.normalized() * enemy.SPEED
 		if distance_to_player.length() < range_to_aim:
-			Transitioned.emit(self, "Aim")
+			transition_to("Aim")

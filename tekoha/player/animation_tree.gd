@@ -1,6 +1,9 @@
 extends AnimationTree
 
-@onready var player: Player = $".."
+@onready var player: Player = get_tree().get_first_node_in_group("Player")
+
+func _ready() -> void:
+	active = true
 
 func _process(_delta: float) -> void:
 	set("parameters/Idle/blend_position", player.last_facing_direction)

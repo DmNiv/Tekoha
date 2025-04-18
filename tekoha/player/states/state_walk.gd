@@ -1,23 +1,17 @@
-class_name PlayerStateWalk extends State
+extends State
 
-@onready var player: Player = $"../.."
-
-func Enter():
+func enter():
 	pass
 
-func Exit():
+func exit():
 	pass
 
-func Update(_delta: float):
-	if player:
-		if !player.velocity:
-			Transitioned.emit(self, "Idle")
-		elif Input.is_action_just_pressed("roll") and player.can_roll:
-			Transitioned.emit(self, "Roll")
-		elif Input.is_action_just_pressed("attack"):
-			Transitioned.emit(self, "Attack01")
+func update(_delta: float):
+	if !owner_node.velocity:
+		transition_to("Idle")
+	owner_node.check_roll_input()
+	owner_node.check_attack_input()
 
-func Physics_Update(_delta: float):
-	if player:
-		player.set_direction()
-		player.velocity = player.move_direction * player.SPEED
+func physics_update(_delta: float):
+	owner_node.set_direction()
+	owner_node.velocity = owner_node.move_direction * owner_node.SPEED

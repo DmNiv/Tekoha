@@ -1,4 +1,4 @@
-[gd_scene load_steps=280 format=3 uid="uid://cyo4xeitxgp01"]
+[gd_scene load_steps=279 format=3 uid="uid://cyo4xeitxgp01"]
 
 [ext_resource type="Script" uid="uid://dcux51y0uwrim" path="res://player/player.gd" id="1_roqei"]
 [ext_resource type="Script" uid="uid://bdxhos810vmao" path="res://player/weapon.gd" id="2_2uvqg"]
@@ -36,9 +36,6 @@
 [ext_resource type="Script" uid="uid://bams61k3mbgxn" path="res://player/states/attack_end.gd" id="25_knn7v"]
 [ext_resource type="Script" uid="uid://tc6n5rypn0ql" path="res://player/states/state_attack02.gd" id="30_jd2rm"]
 [ext_resource type="Script" uid="uid://dksw0a2dtuj7o" path="res://player/states/state_dash.gd" id="32_1s1yo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ejfk"]
-size = Vector2(70, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s1yo"]
 size = Vector2(68, 39)
@@ -2630,12 +2627,6 @@ graph_offset = Vector2(-229, -118)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 32
 script = ExtResource("1_roqei")
-
-[node name="FeatherArea" type="Area2D" parent="."]
-
-[node name="FeatherCollision" type="CollisionShape2D" parent="FeatherArea"]
-shape = SubResource("RectangleShape2D_5ejfk")
-disabled = true
 
 [node name="Weapon" type="Node2D" parent="."]
 script = ExtResource("2_2uvqg")

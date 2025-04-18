@@ -1386,7 +1386,7 @@ graph_offset = Vector2(0, 13)
 
 [node name="EnemyRanged" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 32
+collision_mask = 36
 script = ExtResource("1_e8yjm")
 
 [node name="HealthComponent" type="Node2D" parent="."]

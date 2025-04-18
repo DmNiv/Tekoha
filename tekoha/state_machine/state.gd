@@ -1,15 +1,21 @@
 class_name State extends Node
 
-signal Transitioned
+@onready var owner_node: Node2D
+@onready var animation_tree: AnimationTree
+@onready var animation_root_node: AnimationNodeStateMachinePlayback
+signal Transitioned(state_name: String)
 
-func Enter():
+func enter():
 	pass
 
-func Exit():
+func exit():
 	pass
 
-func Update(_delta: float):
+func update(_delta: float):
 	pass
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	pass
+
+func transition_to(state_name: String):
+	Transitioned.emit(state_name)

@@ -10,22 +10,22 @@ var distance_to_player: Vector2
 func randomize_time():
 	idle_time = randf_range(1, 2)
 
-func Enter():
+func enter():
 	if enemy:
 		enemy.velocity = Vector2.ZERO
 		randomize_time()
 
-func Exit():
+func exit():
 	pass
 
-func Update(delta: float):
+func update(delta: float):
 	if idle_time > 0:
 		idle_time -= delta
 	else:
-		Transitioned.emit(self, "Wander")
+		transition_to("Wander")
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	if player and enemy:
 		distance_to_player = player.global_position - enemy.global_position
 		if distance_to_player.length() < range_to_follow:
-			Transitioned.emit(self, "Follow")
+			transition_to("Follow")
