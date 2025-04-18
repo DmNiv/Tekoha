@@ -7,10 +7,8 @@ func exit():
 	pass
 
 func update(_delta: float):
-	if Input.is_action_just_pressed("attack"):
-		transition_to("Attack02")
-	elif Input.is_action_just_pressed("roll") and owner_node.can_roll:
-		transition_to("Roll")
+	owner_node.check_attack_input()
+	owner_node.check_roll_input()
 
 func physics_update(_delta: float):
 	pass

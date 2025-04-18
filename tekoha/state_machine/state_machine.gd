@@ -15,10 +15,10 @@ func init(owner_info: OwnerInfo) -> void:
 			child.animation_tree = owner_info.animation_tree
 			child.animation_root_node = owner_info.animation_root_node
 			child.Transitioned.connect(change_state)
-		
-		# Se existir um estado inicial, entrar e assumir como estado atual
-		if initial_state:
-			change_state(initial_state.name)
+	
+	# Se existir um estado inicial, entrar e assumir como estado atual
+	if initial_state:
+		change_state(initial_state.name)
 
 func _process(delta: float) -> void:
 	# Atualizando ações de acordo com o estado
