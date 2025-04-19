@@ -45,8 +45,8 @@ radius = 5.0
 height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ms7xr"]
-radius = 4.0
-height = 8.0
+radius = 5.0
+height = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7qer"]
 atlas = ExtResource("4_c35mf")
@@ -2625,7 +2625,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-229, -118)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 32
+collision_mask = 192
 script = ExtResource("1_roqei")
 
 [node name="Weapon" type="Node2D" parent="."]
@@ -2634,7 +2634,7 @@ script = ExtResource("2_2uvqg")
 [node name="WeaponHitbox" type="Area2D" parent="Weapon"]
 position = Vector2(0, 10)
 collision_layer = 0
-collision_mask = 12
+collision_mask = 48
 
 [node name="WeaponCollision" type="CollisionShape2D" parent="Weapon/WeaponHitbox"]
 position = Vector2(0, 9.5)
@@ -2646,6 +2646,7 @@ script = ExtResource("14_lq6vg")
 MAX_HEALTH = 200
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("15_hqlns")
 health_component = NodePath("../HealthComponent")

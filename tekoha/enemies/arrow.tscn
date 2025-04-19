@@ -99,7 +99,8 @@ MAX_HEALTH = 1
 metadata/_custom_type_script = "uid://cryb2wkdfpems"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-collision_layer = 8
+collision_layer = 16
+collision_mask = 4
 script = ExtResource("2_mu8vj")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://cwa0a7ot3ldjx"

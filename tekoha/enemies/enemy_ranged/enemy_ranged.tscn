@@ -1385,8 +1385,10 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(0, 13)
 
 [node name="EnemyRanged" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 36
+collision_layer = 8
+collision_mask = 201
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_e8yjm")
 
 [node name="HealthComponent" type="Node2D" parent="."]
@@ -1394,7 +1396,7 @@ script = ExtResource("17_ij7f7")
 metadata/_custom_type_script = "uid://cryb2wkdfpems"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-collision_layer = 4
+collision_layer = 32
 collision_mask = 0
 script = ExtResource("18_mxmuc")
 health_component = NodePath("../HealthComponent")
@@ -1428,6 +1430,11 @@ parameters/RangeAttack01/blend_position = Vector2(-0.99681, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("20_mapt7")
 
+[node name="RayCast" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+collision_mask = 196
+collide_with_areas = true
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("19_mxmuc")
 initial_state = NodePath("Idle")
@@ -1435,7 +1442,6 @@ metadata/_custom_type_script = "uid://knlg3c1rm1tb"
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("20_u3p5n")
-range_to_follow = 250
 
 [node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource("23_w125s")
@@ -1443,12 +1449,9 @@ range_to_follow = 250
 
 [node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource("24_s6lfo")
-range_to_aim = 100
 
 [node name="Aim" type="Node" parent="StateMachine"]
 script = ExtResource("25_unkp8")
-range_to_attack = 50
-range_to_exit = 125
 
 [node name="RangeAttack01" type="Node" parent="StateMachine"]
 script = ExtResource("25_tm8bu")
