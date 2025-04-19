@@ -1433,19 +1433,16 @@ script = ExtResource("19_mxmuc")
 initial_state = NodePath("Idle")
 metadata/_custom_type_script = "uid://knlg3c1rm1tb"
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("20_u3p5n")
-enemy = NodePath("../..")
 range_to_follow = 250
 
-[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource("23_w125s")
-enemy = NodePath("../..")
 range_to_follow = 250
 
-[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource("24_s6lfo")
-enemy = NodePath("../..")
 range_to_aim = 100
 
 [node name="Aim" type="Node" parent="StateMachine"]
