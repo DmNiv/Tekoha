@@ -20,7 +20,6 @@ func update(delta: float):
 	if projectile_timer > 0:
 		projectile_timer -= delta
 	else:
-		print(owner_node.ray_cast.get_collider())
 		if owner_node.ray_cast.is_colliding() and owner_node.ray_cast.get_collider() is HitboxComponent:
 			transition_to("RangeAttack01")
 		else:

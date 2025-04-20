@@ -11,7 +11,7 @@ var radius_to_move_away: int = 50
 var attack: Attack
 var projectile_damage: int = 10
 var projectile_knockback: int
-const PROJECTILE_STUN_TIME: float = 1.5
+const PROJECTILE_STUN_TIME: float = 0.5
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine: StateMachine = $StateMachine

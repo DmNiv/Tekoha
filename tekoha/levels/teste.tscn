@@ -688,22 +688,19 @@ zoom = Vector2(1.25, 1.25)
 position = Vector2(370, 124)
 
 [node name="EnemyRanged2" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(151, 57)
+position = Vector2(201, -50)
 
 [node name="EnemyRanged3" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(-156, 41)
+position = Vector2(375, 339)
 
 [node name="EnemyRanged4" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(-297, 93)
+position = Vector2(-147, 282)
 
 [node name="EnemyRanged5" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(-302, 268)
+position = Vector2(-243, 84)
 
 [node name="EnemyRanged6" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(-149, 270)
+position = Vector2(-107, -56)
 
 [node name="EnemyRanged7" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(52, 275)
-
-[node name="EnemyRanged8" parent="." instance=ExtResource("2_f0ocu")]
-position = Vector2(227, 276)
+position = Vector2(101, 327)

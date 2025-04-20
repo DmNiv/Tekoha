@@ -1,4 +1,4 @@
-class_name StateRoll extends State
+extends State
 
 @onready var hitbox: CollisionShape2D = $"../../HitboxComponent/Hitbox"
 @onready var roll_timer: Timer = $"../../RollTimer"
@@ -25,11 +25,11 @@ func update(_delta: float):
 func physics_update(_delta: float):
 	pass
 
-func dash():
+func roll():
 	owner_node.velocity = ROLL_SPEED * owner_node.roll_direction
 	hitbox.disabled = true
 	
-func stop_dash():
+func stop_roll():
 	owner_node.velocity = Vector2.ZERO
 	owner_node.last_facing_direction = owner_node.roll_direction
 	hitbox.disabled = false

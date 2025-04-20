@@ -1,0 +1,34 @@
+class_name StateStun extends State
+
+@export var stun_timer: Timer
+@export var hitbox: CollisionShape2D
+@onready var attack_info: Attack
+
+func enter():
+	if owner_node is CharacterBody2D:
+		owner_node.velocity = Vector2.ZERO
+	stun_timer.wait_time = attack_info.stun_time
+	stun_timer.start()
+	animation_root_node.travel("Stun")
+
+func exit():
+	stop_stun()
+	animation_root_node.travel("Idle")
+
+func update(_delta: float):
+	pass
+
+func physics_update(_delta: float):
+	pass
+
+func receive_attack_info(attack: Attack):
+	attack_info = attack
+
+func _on_stun_timer_timeout() -> void:
+	Transitioned.emit("Idle")
+
+func stun():
+	hitbox.disabled = true
+
+func stop_stun():
+	hitbox.disabled = false
