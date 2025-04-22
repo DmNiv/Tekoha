@@ -16,6 +16,7 @@ var direction: Vector2 = Vector2.ZERO
 func _process(delta: float) -> void:
 	animation_tree.set("parameters/blend_position", direction)
 	position += direction * speed * delta
+	attack.attack_position = global_position
 
 
 func _on_hitbox_component_area_entered(area: Area2D) -> void:

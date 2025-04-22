@@ -5,6 +5,7 @@ var weapon: PlayerWeapon
 const ATTACK_VELOCITY: int = 75
 const ATTACK_DAMAGE: int = 30
 const ATTACK_KNOCKBACK: int = 25
+const STUN_TIME: float = 0.75
 
 func enter():
 	weapon = owner_node.weapon
@@ -17,6 +18,7 @@ func enter():
 	# Altera os valores do ataque
 	weapon.attack_damage = ATTACK_DAMAGE
 	weapon.attack_knockback = ATTACK_KNOCKBACK
+	weapon.stun_time = STUN_TIME
 	# Animação de ataque
 	animation_root_node.travel("Attack02")
 

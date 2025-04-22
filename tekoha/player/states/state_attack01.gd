@@ -3,6 +3,7 @@ extends State
 const ATTACK_VELOCITY: int = 50
 const ATTACK_DAMAGE: int = 15
 const ATTACK_KNOCKBACK: int = 20
+const STUN_TIME: float = 0.5
 var weapon: PlayerWeapon
 
 func enter():
@@ -15,6 +16,7 @@ func enter():
 	# Altera os valores do ataque
 	weapon.attack_damage = ATTACK_DAMAGE
 	weapon.attack_knockback = ATTACK_KNOCKBACK
+	weapon.stun_time = STUN_TIME
 	# Animação de ataque
 	animation_root_node.travel("Attack01")
 

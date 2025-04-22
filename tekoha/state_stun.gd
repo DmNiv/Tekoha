@@ -6,7 +6,8 @@ class_name StateStun extends State
 
 func enter():
 	if owner_node is CharacterBody2D:
-		owner_node.velocity = Vector2.ZERO
+		owner_node.velocity = -(attack_info.attack_position - owner_node.global_position).normalized() * attack_info.knockback_force
+		
 	stun_timer.wait_time = attack_info.stun_time
 	stun_timer.start()
 	animation_root_node.travel("Stun")

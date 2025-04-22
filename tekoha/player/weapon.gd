@@ -2,7 +2,7 @@ class_name PlayerWeapon extends Node2D
 
 var attack_damage: int
 var attack_knockback: int
-const STUN_TIME: float = 1.5
+var stun_time: float 
 
 @onready var player: Player = $".."
 @onready var weapon_collision: CollisionShape2D = $WeaponHitbox/WeaponCollision
@@ -14,7 +14,7 @@ func _on_weapon_hitbox_area_entered(area: Area2D) -> void:
 		attack.attack_damage = attack_damage
 		attack.knockback_force = attack_knockback
 		attack.attack_position = global_position
-		attack.stun_time = STUN_TIME
+		attack.stun_time = stun_time
 		area.damage(attack)
 	
 func turn_down():
