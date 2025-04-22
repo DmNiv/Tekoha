@@ -24,8 +24,6 @@ func update(delta: float):
 		transition_to("Wander")
 
 func physics_update(_delta: float):
-	#if owner_node.ray_cast.is_colliding() and owner_node.ray_cast.get_collider() is Player:
-		#transition_to("Follow")
 	if player:
 		distance_to_player = player.global_position - owner_node.global_position
 		if distance_to_player.length() < owner_node.radius_to_follow:

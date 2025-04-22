@@ -5,7 +5,6 @@ class_name StateStun extends State
 @onready var attack_info: Attack
 
 func enter():
-	print("stun")
 	if owner_node is CharacterBody2D:
 		owner_node.velocity = -(attack_info.attack_position - owner_node.global_position).normalized() * attack_info.knockback_force
 		

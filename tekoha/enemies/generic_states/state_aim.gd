@@ -4,11 +4,11 @@ extends State
 
 var distance_to_player: Vector2
 
-const PROJECTILE_COOLDOWN: float = 2.0
-var projectile_timer: float = 0.0
+@export var COOLDOWN: float = 2.0
+@export var timer: float = 0.0
 
 func enter():
-	projectile_timer = PROJECTILE_COOLDOWN
+	timer = COOLDOWN
 	owner_node.velocity = Vector2.ZERO
 
 func exit():
@@ -17,14 +17,14 @@ func exit():
 func update(delta: float):
 	owner_node.target_player()
 
-	if projectile_timer > 0:
-		projectile_timer -= delta
+	if timer > 0:
+		timer -= delta
 	else:
 		if owner_node.ray_cast.is_colliding() and owner_node.ray_cast.get_collider() is HitboxComponent:
-			transition_to("RangeAttack01")
+			transition_to("Attack01")
 		else:
-			projectile_timer = PROJECTILE_COOLDOWN
-	
+			timer = COOLDOWN
+
 
 func physics_update(_delta: float):
 	if player:

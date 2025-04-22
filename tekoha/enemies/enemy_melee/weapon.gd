@@ -1,4 +1,4 @@
-class_name PlayerWeapon extends Node2D
+class_name EnemyWeapon extends Node2D
 
 var attack_damage: int
 var attack_knockback: int
