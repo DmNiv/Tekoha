@@ -27,12 +27,12 @@ func physics_update(_delta: float):
 
 func roll():
 	owner_node.velocity = ROLL_SPEED * owner_node.roll_direction
-	hitbox.disabled = true
+	hitbox.set_deferred("disabled", true)
 	
 func stop_roll():
 	owner_node.velocity = Vector2.ZERO
 	owner_node.last_facing_direction = owner_node.roll_direction
-	hitbox.disabled = false
+	hitbox.set_deferred("disabled", false)
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["roll_down", "roll_up", "roll_left", "roll_right"]:

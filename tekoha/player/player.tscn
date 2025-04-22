@@ -1569,7 +1569,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_65viv"]
 resource_name = "attack01_down"
-length = 0.583338
+length = 0.291671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1590,7 +1590,7 @@ tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -1602,7 +1602,7 @@ tracks/2/path = NodePath("StateMachine/Attack01")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.291667, 0.541667),
+"times": PackedFloat32Array(0.145651, 0.269885),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1619,7 +1619,7 @@ tracks/3/path = NodePath("Weapon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.291667),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1629,7 +1629,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_x7c3f"]
 resource_name = "attack01_left"
-length = 0.583338
+length = 0.291671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1650,7 +1650,7 @@ tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -1662,7 +1662,7 @@ tracks/2/path = NodePath("StateMachine/Attack01")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.291667, 0.541667),
+"times": PackedFloat32Array(0.145651, 0.269885),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1679,7 +1679,7 @@ tracks/3/path = NodePath("Weapon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.291667),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1689,7 +1689,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_bjvpn"]
 resource_name = "attack01_right"
-length = 0.583338
+length = 0.291671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1710,7 +1710,7 @@ tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -1722,7 +1722,7 @@ tracks/2/path = NodePath("StateMachine/Attack01")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.291667, 0.541667),
+"times": PackedFloat32Array(0.145651, 0.269885),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1739,7 +1739,7 @@ tracks/3/path = NodePath("Weapon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.291667),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1749,7 +1749,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_c35mf"]
 resource_name = "attack01_up"
-length = 0.583338
+length = 0.291671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1770,7 +1770,7 @@ tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -1782,7 +1782,7 @@ tracks/2/path = NodePath("StateMachine/Attack01")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.291667, 0.541667),
+"times": PackedFloat32Array(0.145651, 0.269885),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1799,7 +1799,7 @@ tracks/3/path = NodePath("Weapon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.291667),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],

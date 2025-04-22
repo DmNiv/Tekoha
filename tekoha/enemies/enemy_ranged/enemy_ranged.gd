@@ -9,7 +9,7 @@ var radius_to_aim: int = 100
 var radius_to_move_away: int = 50
 
 var attack: Attack
-var projectile_damage: int = 10
+var projectile_damage: int = 1
 var projectile_knockback: int = 25
 const PROJECTILE_STUN_TIME: float = 0.5
 

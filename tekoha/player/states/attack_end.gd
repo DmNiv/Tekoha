@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	print("attackEnd")
 	animation_root_node.travel("AttackEnd")
 
 func exit():

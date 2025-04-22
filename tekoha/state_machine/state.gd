@@ -20,5 +20,4 @@ func physics_update(_delta: float):
 	pass
 
 func transition_to(state_name: String):
-	if state_machine.current_state.name != "Stun":
-		Transitioned.emit(state_name)
+	Transitioned.emit(state_name)

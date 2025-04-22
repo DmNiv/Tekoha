@@ -7,6 +7,7 @@ const STUN_TIME: float = 0.5
 var weapon: PlayerWeapon
 
 func enter():
+	print("attack01")
 	weapon = owner_node.weapon
 	owner_node.velocity = Vector2.ZERO
 	# Atualiza a direção do mouse
@@ -31,13 +32,17 @@ func physics_update(_delta: float):
 
 func attack():
 	owner_node.velocity = (owner_node.attack_direction) * ATTACK_VELOCITY
-	weapon.weapon_collision.disabled = false
+	print("ligou")
+	weapon.weapon_collision.set_deferred("disabled", false)
 	
 func stop_attack():
+	print("entrou")
+	print("altera colisão")
+	weapon.weapon_collision.set_deferred("disabled", true)
+	print("desligou")
 	owner_node.velocity = Vector2.ZERO
 	owner_node.last_facing_direction = owner_node.mouse_direction
-	weapon.weapon_collision.disabled = true
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
-	if anim_name in ["attack01_down", "attack01_up", "attack01_left", "attack01_right"]:
+	if anim_name in ["attack01_down", "attack01_up", "attack01_left", "attack01_right"] and state_machine.current_state.name == "Attack01":
 		transition_to("AttackEnd")
