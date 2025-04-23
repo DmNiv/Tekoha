@@ -1,7 +1,8 @@
 extends State
 
 func enter():
-	owner_node.velocity = Vector2.ZERO
+	if state_machine.current_state.name == "Idle":
+		owner_node.velocity = Vector2.ZERO
 
 func exit():
 	pass

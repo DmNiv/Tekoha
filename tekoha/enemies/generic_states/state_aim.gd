@@ -8,8 +8,9 @@ var distance_to_player: Vector2
 var timer: float = 0.0
 
 func enter():
-	timer = COOLDOWN
-	owner_node.velocity = Vector2.ZERO
+	if state_machine.current_state.name == "Aim":
+		timer = COOLDOWN
+		owner_node.velocity = Vector2.ZERO
 
 func exit():
 	pass

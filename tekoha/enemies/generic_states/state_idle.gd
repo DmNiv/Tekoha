@@ -6,8 +6,9 @@ var distance_to_player: Vector2
 var idle_time: float
 
 func enter():
-	owner_node.velocity = Vector2.ZERO
-	randomize_time()
+	if state_machine.current_state.name == "Idle":
+		owner_node.velocity = Vector2.ZERO
+		randomize_time()
 
 func exit():
 	pass
@@ -27,4 +28,5 @@ func physics_update(_delta: float):
 			transition_to("Follow")
 
 func randomize_time():
-	idle_time = randf_range(1, 2)
+	if state_machine.current_state.name == "Idle":
+		idle_time = randf_range(1, 2)

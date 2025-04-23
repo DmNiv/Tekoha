@@ -6,7 +6,8 @@ var distance_to_player: Vector2
 var wander_time: float
 
 func enter():
-	randomize_wander()
+	if state_machine.current_state.name == "Wander":
+		randomize_wander()
 
 func exit():
 	pass
@@ -27,5 +28,6 @@ func physics_update(_delta: float):
 			transition_to("Follow")
 
 func randomize_wander():
-	owner_node.move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	wander_time = randf_range(1, 2)
+	if state_machine.current_state.name == "Wander":
+		owner_node.move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		wander_time = randf_range(1, 2)
