@@ -1,30 +1,24 @@
-class_name Enemy extends CharacterBody2D
-
-const SPEED : float = 50.0 
-var move_direction : Vector2
-var last_facing_direction = Vector2(0, 1)
-
-var radius_to_follow: int = 250
-var radius_to_aim: int = 100
-var radius_to_move_away: int = 50
-
-var attack: Attack
-var projectile_damage: int = 1
-var projectile_knockback: int = 25
-const PROJECTILE_STUN_TIME: float = 0.5
-
-@onready var animation_tree: AnimationTree = $AnimationTree
-@onready var state_machine: StateMachine = $StateMachine
-@onready var owner_info : OwnerInfo
-
-@onready var ray_cast: RayCast2D = $RayCast
-
+class_name EnemyRanged extends Enemy
 
 func _ready() -> void:
+	speed = 50
+	
+	radius_to_follow = 250
+	radius_to_aim = 100
+	radius_to_move_away = 50
+	
+	attack_damage = 1
+	attack_knockback = 25
+	attack_stun_time = 0.5
+	
+	animation_tree = $AnimationTree
+	state_machine = $StateMachine
+	ray_cast = $RayCast
+	
 	attack = Attack.new()
-	attack.attack_damage = projectile_damage
-	attack.knockback_force = projectile_knockback
-	attack.stun_time = PROJECTILE_STUN_TIME
+	attack.attack_damage = attack_damage
+	attack.knockback_force = attack_knockback
+	attack.stun_time = attack_stun_time
 	
 	owner_info = OwnerInfo.new()
 	owner_info.owner_node = self
@@ -35,9 +29,3 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	last_facing_direction = move_direction
 	move_and_slide()
-
-func target_player():
-	var player = get_tree().get_first_node_in_group("Player")
-	if player:
-		var target_direction = (player.global_position - global_position).normalized()
-		ray_cast.target_position = to_local(player.position)

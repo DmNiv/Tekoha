@@ -1,7 +1,6 @@
 extends AnimationTree
 
-# temos que ver como criar uma classe Enemy e fazer eles herdarem dela
-@onready var enemy_melee: CharacterBody2D = $".."
+@export var enemy_melee: EnemyMelee
 
 func _ready() -> void:
 	active = true

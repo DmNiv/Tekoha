@@ -1823,7 +1823,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_ij7f7")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("enemy_ranged")]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_8pjee")
 advance_expression_base_node = NodePath("..")
@@ -1834,6 +1834,7 @@ parameters/RangeAttack01/blend_position = Vector2(-0.99681, 0)
 parameters/Stun/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("20_mapt7")
+enemy_ranged = NodePath("..")
 
 [node name="RayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
@@ -1850,7 +1851,6 @@ script = ExtResource("20_u3p5n")
 
 [node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource("23_w125s")
-range_to_follow = 250
 
 [node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource("24_s6lfo")

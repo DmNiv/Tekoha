@@ -1989,7 +1989,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_ij7f7")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("enemy_melee")]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_cxdb1")
 advance_expression_base_node = NodePath("..")
@@ -2000,6 +2000,7 @@ parameters/MeleeAttack01/blend_position = Vector2(-0.00162601, 0)
 parameters/Stun/blend_position = Vector2(0.00162601, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("24_7ov6s")
+enemy_melee = NodePath("..")
 
 [node name="RayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
@@ -2016,16 +2017,17 @@ script = ExtResource("25_1xxxx")
 
 [node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource("26_pfqhc")
-range_to_follow = 250
 
 [node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource("27_82hql")
 
 [node name="Aim" type="Node" parent="StateMachine"]
 script = ExtResource("28_qmlx8")
+COOLDOWN = 0.5
 
 [node name="Attack01" type="Node" parent="StateMachine"]
 script = ExtResource("30_8kmqy")
+attack_velocity = 50
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("stun_timer", "hitbox")]
 script = ExtResource("31_wpw5j")

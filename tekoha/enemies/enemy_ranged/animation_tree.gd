@@ -1,6 +1,6 @@
 extends AnimationTree
 
-@onready var enemy_ranged: Enemy = $".."
+@export var enemy_ranged: EnemyRanged
 
 func _ready() -> void:
 	active = true

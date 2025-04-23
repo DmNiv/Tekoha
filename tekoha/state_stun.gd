@@ -2,6 +2,7 @@ class_name StateStun extends State
 
 @export var stun_timer: Timer
 @export var hitbox: CollisionShape2D
+
 @onready var attack_info: Attack
 
 func enter():

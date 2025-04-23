@@ -5,9 +5,6 @@ extends State
 var distance_to_player: Vector2
 var idle_time: float
 
-func randomize_time():
-	idle_time = randf_range(1, 2)
-
 func enter():
 	owner_node.velocity = Vector2.ZERO
 	randomize_time()
@@ -28,3 +25,6 @@ func physics_update(_delta: float):
 		distance_to_player = player.global_position - owner_node.global_position
 		if distance_to_player.length() < owner_node.radius_to_follow:
 			transition_to("Follow")
+
+func randomize_time():
+	idle_time = randf_range(1, 2)

@@ -5,7 +5,7 @@ extends State
 var distance_to_player: Vector2
 
 @export var COOLDOWN: float = 2.0
-@export var timer: float = 0.0
+var timer: float = 0.0
 
 func enter():
 	timer = COOLDOWN
@@ -16,7 +16,7 @@ func exit():
 
 func update(delta: float):
 	owner_node.target_player()
-
+	
 	if timer > 0:
 		timer -= delta
 	else:
@@ -25,15 +25,12 @@ func update(delta: float):
 		else:
 			timer = COOLDOWN
 
-
 func physics_update(_delta: float):
 	if player:
 		distance_to_player = player.global_position - owner_node.global_position
 		owner_node.move_direction = distance_to_player.normalized()
-	
+		
 		if distance_to_player.length() > (owner_node.radius_to_aim + 20):
 			transition_to("Follow")
 		elif distance_to_player.length() < owner_node.radius_to_move_away:
-			owner_node.velocity = -owner_node.move_direction * (owner_node.SPEED*0.8)
-	
-	
+			owner_node.velocity = -owner_node.move_direction * (owner_node.speed*0.8)
