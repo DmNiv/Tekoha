@@ -5,7 +5,6 @@ extends State
 var distance_to_player: Vector2
 var wander_time: float
 
-
 func enter():
 	randomize_wander()
 
