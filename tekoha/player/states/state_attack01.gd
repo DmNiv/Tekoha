@@ -8,7 +8,6 @@ var weapon: PlayerWeapon
 
 func enter():
 	if state_machine.current_state.name == "Attack01":
-		print("attack01")
 		weapon = owner_node.weapon
 		owner_node.velocity = Vector2.ZERO
 		# Atualiza a direção do mouse
@@ -34,16 +33,12 @@ func physics_update(_delta: float):
 
 func attack():
 	if state_machine.current_state.name == "Attack01":
-		print("vai ligar a colisão")
 		owner_node.velocity = (owner_node.attack_direction) * ATTACK_VELOCITY
-		print("ligou a colisão")
 		weapon.weapon_collision.set_deferred("disabled", false)
 	
 func stop_attack():
 	if state_machine.current_state.name == "Attack01":
-		print("vai desligar colisão")
 		weapon.weapon_collision.set_deferred("disabled", true)
-		print("desligou colisão")
 		owner_node.velocity = Vector2.ZERO
 		owner_node.last_facing_direction = owner_node.mouse_direction
 

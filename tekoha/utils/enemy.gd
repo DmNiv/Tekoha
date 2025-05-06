@@ -17,6 +17,7 @@ var attack_stun_time: float
 var animation_tree: AnimationTree
 var state_machine: StateMachine
 var ray_cast: RayCast2D
+var nav_agent: NavigationAgent2D
 
 var owner_info : OwnerInfo
 

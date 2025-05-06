@@ -16,6 +16,7 @@ func _ready() -> void:
 	animation_tree = $AnimationTree
 	state_machine = $StateMachine
 	ray_cast = $RayCast
+	nav_agent = $NavigationAgent2D
 	
 	attack = Attack.new()
 	attack.attack_damage = attack_damage

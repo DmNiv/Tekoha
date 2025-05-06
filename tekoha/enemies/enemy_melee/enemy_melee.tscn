@@ -1995,6 +1995,9 @@ position = Vector2(0, 8)
 collision_mask = 196
 collide_with_areas = true
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("24_fy2g0")
 initial_state = NodePath("Idle")
@@ -2006,8 +2009,9 @@ script = ExtResource("25_1xxxx")
 [node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource("26_pfqhc")
 
-[node name="Follow" type="Node" parent="StateMachine"]
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("nav_timer")]
 script = ExtResource("27_82hql")
+nav_timer = NodePath("../../NavigationTimer")
 
 [node name="Aim" type="Node" parent="StateMachine"]
 script = ExtResource("28_qmlx8")
@@ -2026,6 +2030,10 @@ metadata/_custom_type_script = "uid://dp1cxsexln1iv"
 [node name="StunTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="NavigationTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="area_entered" from="Weapon/WeaponHitbox" to="Weapon" method="_on_weapon_hitbox_area_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Attack01" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="StunTimer" to="StateMachine/Stun" method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="NavigationTimer" to="StateMachine/Follow" method="_on_navigation_timer_timeout"]

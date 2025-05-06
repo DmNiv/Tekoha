@@ -2,7 +2,6 @@ extends State
 
 func enter():
 	if state_machine.current_state.name == "AttackEnd":
-		print("attackEnd")
 		animation_root_node.travel("AttackEnd")
 
 func exit():

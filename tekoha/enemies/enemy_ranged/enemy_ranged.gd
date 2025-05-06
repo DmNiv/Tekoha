@@ -14,6 +14,7 @@ func _ready() -> void:
 	animation_tree = $AnimationTree
 	state_machine = $StateMachine
 	ray_cast = $RayCast
+	nav_agent = $NavigationAgent2D
 	
 	attack = Attack.new()
 	attack.attack_damage = attack_damage
@@ -27,6 +28,5 @@ func _ready() -> void:
 	state_machine.init(owner_info)
 	
 func _physics_process(_delta: float) -> void:
-	print(state_machine.current_state)
 	last_facing_direction = move_direction
 	move_and_slide()
