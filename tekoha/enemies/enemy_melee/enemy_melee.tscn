@@ -1932,6 +1932,8 @@ graph_offset = Vector2(-70, -94)
 [node name="EnemyMelee" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 201
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_7ov6s")
 
 [node name="Weapon" type="Node2D" parent="."]
@@ -1996,6 +1998,7 @@ collision_mask = 196
 collide_with_areas = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
 debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]

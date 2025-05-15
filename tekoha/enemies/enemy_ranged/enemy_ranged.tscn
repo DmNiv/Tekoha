@@ -1842,6 +1842,7 @@ collision_mask = 196
 collide_with_areas = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
 debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
