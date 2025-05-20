@@ -20,6 +20,7 @@ var can_roll: bool = true
 @onready var owner_info : OwnerInfo
 @onready var weapon: PlayerWeapon = $Weapon
 
+
 func _ready() -> void:
 	owner_info = OwnerInfo.new()
 	owner_info.owner_node = self

@@ -12,3 +12,4 @@ func _process(_delta: float) -> void:
 	set("parameters/AttackEnd/blend_position", player.attack_direction)
 	set("parameters/Attack02/blend_position", player.attack_direction)
 	set("parameters/Roll/blend_position", player.roll_direction)
+	set("parameters/Stun/blend_position", -player.velocity)

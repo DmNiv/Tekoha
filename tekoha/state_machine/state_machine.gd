@@ -12,6 +12,7 @@ func init(owner_info: OwnerInfo) -> void:
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.owner_node = owner_info.owner_node
+			child.state_machine = self
 			child.animation_tree = owner_info.animation_tree
 			child.animation_root_node = owner_info.animation_root_node
 			child.Transitioned.connect(change_state)
