@@ -28,7 +28,8 @@ func physics_update(_delta: float):
 			transition_to("Aim")
 
 func makepath():
-	owner_node.nav_agent.target_position = player.global_position
+	if player:
+		owner_node.nav_agent.target_position = player.global_position
 
 
 func _on_navigation_timer_timeout() -> void:

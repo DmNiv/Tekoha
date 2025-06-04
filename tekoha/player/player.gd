@@ -20,6 +20,7 @@ var can_roll: bool = true
 @onready var owner_info : OwnerInfo
 @onready var weapon: PlayerWeapon = $Weapon
 
+signal Player_dead
 
 func _ready() -> void:
 	owner_info = OwnerInfo.new()
@@ -53,3 +54,7 @@ func check_roll_input():
 
 func _on_roll_timer_timeout() -> void:
 	can_roll = true
+
+func die():
+	queue_free()
+	emit_signal("Player_dead")

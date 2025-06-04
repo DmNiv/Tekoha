@@ -10,4 +10,7 @@ func damage(attack: Attack) -> void:
 	health -= attack.attack_damage
 
 	if health <= 0:
-		get_parent().queue_free()
+		if get_parent() is Player:
+			get_parent().die()
+		else:
+			get_parent().queue_free()
