@@ -18,15 +18,15 @@
 [ext_resource type="Script" uid="uid://dp1cxsexln1iv" path="res://state_stun.gd" id="37_pnw6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s1yo"]
-size = Vector2(68, 39)
+size = Vector2(80, 46)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sw8gl"]
 radius = 11.0
 height = 52.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ms7xr"]
-radius = 6.0
-height = 12.0
+radius = 9.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rptt4"]
 atlas = ExtResource("19_5ejfk")
@@ -2734,7 +2734,7 @@ collision_layer = 0
 collision_mask = 48
 
 [node name="WeaponCollision" type="CollisionShape2D" parent="Weapon/WeaponHitbox"]
-position = Vector2(0, 9.5)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_1s1yo")
 disabled = true
 
@@ -2755,7 +2755,7 @@ shape = SubResource("CapsuleShape2D_sw8gl")
 debug_color = Color(1, 0.449014, 0.411531, 0.42)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 23)
+position = Vector2(0, 20)
 shape = SubResource("CapsuleShape2D_ms7xr")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
