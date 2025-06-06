@@ -1503,13 +1503,13 @@ tile_map_data = PackedByteArray("AAAzAAYAAAACAAUAAAAzAAcAAAACAAYAAAAzAAgAAAACAAc
 tile_set = SubResource("TileSet_ustuw")
 
 [node name="Player" parent="." instance=ExtResource("1_c0kp1")]
-position = Vector2(961, 381)
+position = Vector2(967, 127)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.25, 1.25)
 
 [node name="EnemyRanged" parent="." instance=ExtResource("7_vub64")]
-position = Vector2(290, 112)
+position = Vector2(797, 140)
 
 [node name="EnemyRanged2" parent="." instance=ExtResource("7_vub64")]
 position = Vector2(109, 349)

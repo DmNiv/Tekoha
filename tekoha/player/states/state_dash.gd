@@ -17,6 +17,7 @@ func enter():
 	animation_root_node.travel("Roll")
 
 func exit():
+	stop_roll()
 	roll_timer.start()
 
 func update(_delta: float):

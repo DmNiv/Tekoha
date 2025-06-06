@@ -7,8 +7,6 @@ class_name StateStun extends State
 
 func enter():
 	if state_machine.current_state.name == "Stun":
-		if owner_node is Player:
-			print("Stun")
 		if owner_node is CharacterBody2D:
 			owner_node.velocity = -(attack_info.attack_position - owner_node.global_position).normalized() * attack_info.knockback_force
 			
