@@ -1949,8 +1949,9 @@ position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_fwkln")
 disabled = true
 
-[node name="HealthComponent" type="Node2D" parent="."]
+[node name="HealthComponent" type="Node2D" parent="." node_paths=PackedStringArray("state_machine")]
 script = ExtResource("1_8kmqy")
+state_machine = NodePath("../StateMachine")
 metadata/_custom_type_script = "uid://cryb2wkdfpems"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "state_machine", "stun_state")]
