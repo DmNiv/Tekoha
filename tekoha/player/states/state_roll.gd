@@ -1,7 +1,7 @@
 extends State
 
-@onready var hitbox: CollisionShape2D = $"../../HitboxComponent/Hitbox"
-@onready var roll_timer: Timer = $"../../RollTimer"
+@export var roll_timer: Timer
+@export var hitbox: CollisionShape2D
 
 
 const ROLL_SPEED : int = 150

@@ -1,6 +1,6 @@
 class_name StateDeath extends State
 
-@onready var hitbox: CollisionShape2D = $"../../HitboxComponent/Hitbox"
+@export var hitbox: CollisionShape2D
 
 func enter():
 	hitbox.set_deferred("disabled", true)
