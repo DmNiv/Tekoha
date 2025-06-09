@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjs8v1j5vuf1t"]
+
+[ext_resource type="Script" uid="uid://cryb2wkdfpems" path="res://components/health/health_component.gd" id="1_mkq7v"]
+[ext_resource type="Script" uid="uid://cwa0a7ot3ldjx" path="res://components/hitbox/hitbox_component.gd" id="2_k30d4"]
+[ext_resource type="Script" uid="uid://knlg3c1rm1tb" path="res://state_machine/state_machine.gd" id="3_kxuut"]
+
+[node name="IabebyraYgua" type="Node2D"]
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("1_mkq7v")
+metadata/_custom_type_script = "uid://cryb2wkdfpems"
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_k30d4")
+metadata/_custom_type_script = "uid://cwa0a7ot3ldjx"
+
+[node name="Hitbox" type="CollisionShape2D" parent="HitboxComponent"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_kxuut")
+metadata/_custom_type_script = "uid://knlg3c1rm1tb"
+
+[node name="Node" type="Node" parent="StateMachine"]
+
+[node name="Node2" type="Node" parent="StateMachine"]
