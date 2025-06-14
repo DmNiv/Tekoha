@@ -21,7 +21,7 @@ func update(delta: float):
 	if timer > 0:
 		timer -= delta
 	else:
-		if owner_node.ray_cast.is_colliding() and owner_node.ray_cast.get_collider() is HitboxComponent:
+		if owner_node.is_seeing_player():
 			transition_to("Attack01")
 		else:
 			timer = COOLDOWN

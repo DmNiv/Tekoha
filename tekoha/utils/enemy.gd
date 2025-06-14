@@ -16,12 +16,26 @@ var attack_stun_time: float
 
 var animation_tree: AnimationTree
 var state_machine: StateMachine
-var ray_cast: RayCast2D
 var nav_agent: NavigationAgent2D
+var vision_cone: Node2D
+var ray_casts: Array[RayCast2D]
 
 var owner_info : OwnerInfo
 
+var angle_cone_of_vision = deg_to_rad(30.0)
+var max_view_distance = 50.0
+var angle_between_rays = deg_to_rad(10.0)
+
 func target_player():
 	var player = get_tree().get_first_node_in_group("Player")
+	for ray in ray_casts:
+		ray.target_position = to_local(player.global_position)
+
+
+func is_seeing_player():
+	var player = get_tree().get_first_node_in_group("Player")
 	if player:
-		ray_cast.target_position = to_local(player.position)
+		for ray in ray_casts:
+			if ray.get_collider() is HitboxComponent:
+				return true
+		return false

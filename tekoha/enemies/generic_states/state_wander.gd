@@ -24,7 +24,7 @@ func physics_update(_delta: float):
 	owner_node.velocity = owner_node.move_direction * owner_node.speed
 	if player:
 		distance_to_player = player.global_position - owner_node.global_position
-		if distance_to_player.length() < owner_node.radius_to_follow:
+		if distance_to_player.length() < owner_node.radius_to_follow and owner_node.is_seeing_player():
 			transition_to("Follow")
 
 func randomize_wander():

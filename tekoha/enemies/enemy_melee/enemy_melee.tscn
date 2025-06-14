@@ -1993,8 +1993,25 @@ parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("24_7ov6s")
 enemy_melee = NodePath("..")
 
-[node name="RayCast" type="RayCast2D" parent="."]
+[node name="VisionCone" type="Node2D" parent="."]
+
+[node name="RayCast1" type="RayCast2D" parent="VisionCone"]
 position = Vector2(0, 8)
+target_position = Vector2(0, 100)
+collision_mask = 196
+collide_with_areas = true
+
+[node name="RayCast2" type="RayCast2D" parent="VisionCone"]
+position = Vector2(0, 8)
+rotation = -0.0872665
+target_position = Vector2(0, 100)
+collision_mask = 196
+collide_with_areas = true
+
+[node name="RayCast3" type="RayCast2D" parent="VisionCone"]
+position = Vector2(0, 8)
+rotation = 0.0872665
+target_position = Vector2(0, 100)
 collision_mask = 196
 collide_with_areas = true
 
