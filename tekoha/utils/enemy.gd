@@ -28,8 +28,10 @@ var angle_between_rays = deg_to_rad(10.0)
 
 func target_player():
 	var player = get_tree().get_first_node_in_group("Player")
-	for ray in ray_casts:
-		ray.target_position = to_local(player.global_position)
+	if player:
+		for ray in ray_casts:
+			ray.target_position = to_local(player.position)
+		
 
 
 func is_seeing_player():
